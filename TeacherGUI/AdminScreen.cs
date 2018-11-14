@@ -29,7 +29,6 @@ namespace TeacherGUI
             if (cmd.ExecuteNonQuery() > 0)
             {
                 MessageBox.Show("Record inserted");
-                
             }
             else
             {
@@ -47,7 +46,7 @@ namespace TeacherGUI
         private void AdminScreen_Load(object sender, EventArgs e)
         {
 
-            //populate dataGridView
+            //populate class dataGridView
             databaseController.dbConnect();
             databaseController.sqlQuery = "SELECT CONCAT(t.first_name, ' ', t.last_name) AS 'Professor', " +
                                                   "c.name 'Class Name', co.course_day 'Class Day', c.startTime 'Start Time' " +
@@ -61,7 +60,16 @@ namespace TeacherGUI
             myAdapter.Fill(dgvDataTable);
             dataGridView1.DataSource = dgvDataTable;
 
-
+            //populate professor dataGridView
+            databaseController.sqlQuery = "SELECT CONCAT(t.first_name, ' ', t.last_name) AS 'Professor', " +
+                                                  "login_id AS 'Username'" +
+                                          "FROM teacher t;";
+            cmd = new MySqlCommand(databaseController.sqlQuery, databaseController.conn);
+            myAdapter = new MySqlDataAdapter();
+            myAdapter.SelectCommand = cmd;
+            dgvDataTable = new DataTable();
+            myAdapter.Fill(dgvDataTable);
+            dataGridView2.DataSource = dgvDataTable;
 
             //populate professor dropdown
             databaseController.sqlQuery = "SELECT CONCAT(first_name, ' ', last_name) AS 'Professor'" +
