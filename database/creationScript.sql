@@ -22,9 +22,17 @@ CREATE TABLE course (
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	teacher_id INT,
 	crn int(7),
+	name VARCHAR(255),
     startTime time,
     endTime time
 );
+
+CREATE TABLE course_occurrence (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    course_id INT,
+    course_day VARCHAR(32)
+);
+
 
 CREATE TABLE trackingData (
 	course_id int,
