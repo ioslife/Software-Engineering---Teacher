@@ -40,6 +40,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,9 +54,9 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(99, 166);
+            this.textBox1.Location = new System.Drawing.Point(12, 193);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(85, 20);
+            this.textBox1.Size = new System.Drawing.Size(260, 20);
             this.textBox1.TabIndex = 1;
             this.textBox1.Text = "Class Name";
             // 
@@ -79,9 +80,9 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(190, 167);
+            this.textBox3.Location = new System.Drawing.Point(12, 245);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(82, 20);
+            this.textBox3.Size = new System.Drawing.Size(260, 20);
             this.textBox3.TabIndex = 4;
             this.textBox3.Text = "Class Time";
             // 
@@ -97,7 +98,7 @@
             // 
             // SubmitClass
             // 
-            this.SubmitClass.Location = new System.Drawing.Point(311, 167);
+            this.SubmitClass.Location = new System.Drawing.Point(311, 242);
             this.SubmitClass.Name = "SubmitClass";
             this.SubmitClass.Size = new System.Drawing.Size(75, 23);
             this.SubmitClass.TabIndex = 6;
@@ -125,14 +126,14 @@
             "Master Chief"});
             this.comboBox1.Location = new System.Drawing.Point(12, 166);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(81, 21);
+            this.comboBox1.Size = new System.Drawing.Size(260, 21);
             this.comboBox1.TabIndex = 10;
             this.comboBox1.Text = "Professor";
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 196);
+            this.dataGridView1.Location = new System.Drawing.Point(11, 271);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(374, 280);
             this.dataGridView1.TabIndex = 11;
@@ -153,11 +154,20 @@
             this.textBox5.TabIndex = 13;
             this.textBox5.Text = "Password";
             // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(12, 219);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(260, 20);
+            this.textBox6.TabIndex = 14;
+            this.textBox6.Text = "Class Day";
+            // 
             // AdminScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(901, 503);
+            this.ClientSize = new System.Drawing.Size(901, 567);
+            this.Controls.Add(this.textBox6);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.dataGridView1);
@@ -193,5 +203,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox6;
     }
 }
