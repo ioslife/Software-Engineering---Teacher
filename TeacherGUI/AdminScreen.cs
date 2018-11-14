@@ -16,12 +16,31 @@ namespace TeacherGUI
 
         private void SubmitProfessor_Click(object sender, EventArgs e)
         {
+            databaseController.dbConnect();
+            databaseController.sqlQuery = "INSERT INTO teacher (login_id, pass, first_name, last_name) " +
+                                          "VALUES (@login, @pass, @firstName, @lastName)";
+            MySqlCommand cmd = new MySqlCommand(databaseController.sqlQuery, databaseController.conn);
 
+            cmd.Parameters.AddWithValue("@login", Environment.UserName);
+            cmd.Parameters.AddWithValue("@pass", firstName.Text);
+            cmd.Parameters.AddWithValue("@firstName", lastName.Text);
+            cmd.Parameters.AddWithValue("@lastName", password.Text);
+
+            if (cmd.ExecuteNonQuery() > 0)
+            {
+                MessageBox.Show("Record inserted");
+                
+            }
+            else
+            {
+                MessageBox.Show("Record failed");
+            }
         }
 
         private void SubmitClass_Click(object sender, EventArgs e)
         {
             
+
         }
 
         //on load
@@ -83,6 +102,8 @@ namespace TeacherGUI
 
             // make it readonly
             comboBox3.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            databaseController.conn.Close();
         }
 
         //code from https://stackoverflow.com/questions/14544135/how-to-gray-out-default-text-in-textbox
