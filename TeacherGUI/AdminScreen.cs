@@ -21,18 +21,20 @@ namespace TeacherGUI
                                           "VALUES (@login, @pass, @firstName, @lastName)";
             MySqlCommand cmd = new MySqlCommand(databaseController.sqlQuery, databaseController.conn);
 
+            string passwordHash = Hash.passwordHash(password.Text);
+
             cmd.Parameters.AddWithValue("@login", Environment.UserName);
-            cmd.Parameters.AddWithValue("@pass", firstName.Text);
-            cmd.Parameters.AddWithValue("@firstName", lastName.Text);
-            cmd.Parameters.AddWithValue("@lastName", password.Text);
+            cmd.Parameters.AddWithValue("@pass", passwordHash);
+            cmd.Parameters.AddWithValue("@firstName", firstName.Text);
+            cmd.Parameters.AddWithValue("@lastName", lastName.Text);
 
             if (cmd.ExecuteNonQuery() > 0)
             {
-                MessageBox.Show("Record inserted");
+                MessageBox.Show("Professor Added");
             }
             else
             {
-                MessageBox.Show("Record failed");
+                MessageBox.Show("Submission failed, please ensure you entered all data and try again.");
             }
         }
 

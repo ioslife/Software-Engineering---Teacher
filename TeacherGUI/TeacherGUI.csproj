@@ -75,6 +75,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Hash.cs" />
     <Compile Include="Historic Data.cs">
       <SubType>Form</SubType>
     </Compile>

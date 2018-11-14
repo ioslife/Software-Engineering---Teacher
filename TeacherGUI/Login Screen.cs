@@ -31,8 +31,10 @@ namespace TeacherGUI
             databaseController.sqlQuery = "SELECT * FROM teacher WHERE login_id = @username && pass = @pass;";
             MySqlCommand cmd = new MySqlCommand(databaseController.sqlQuery, databaseController.conn);
 
+
+            string passwordHash = Hash.passwordHash(passwordTextBox.Text);
             cmd.Parameters.AddWithValue("@username", usernameTextBox.Text);
-            cmd.Parameters.AddWithValue("@pass", passwordTextBox.Text);
+            cmd.Parameters.AddWithValue("@pass", passwordHash);
 
             MySqlDataReader reader = cmd.ExecuteReader();
 

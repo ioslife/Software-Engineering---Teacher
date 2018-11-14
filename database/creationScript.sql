@@ -13,7 +13,7 @@ CREATE TABLE teacher (
 	id INT PRIMARY KEY AUTO_INCREMENT,
     login_id varchar(32),
 	administrator BOOLEAN NOT NULL DEFAULT 0,
-	pass varchar(32),
+	pass varchar(255),
 	first_name varchar(32),
 	last_name varchar(32)
 );
