@@ -31,10 +31,12 @@ namespace TeacherGUI
             if (cmd.ExecuteNonQuery() > 0)
             {
                 MessageBox.Show("Professor Added");
+                databaseController.conn.Close();
             }
             else
             {
                 MessageBox.Show("Submission failed, please ensure you entered all data and try again.");
+                databaseController.conn.Close();
             }
         }
 
