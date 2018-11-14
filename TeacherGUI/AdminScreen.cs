@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Drawing;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
@@ -58,6 +59,29 @@ namespace TeacherGUI
             comboBox1.DisplayMember = "Professor";
             comboBox1.DataSource = profDataTable;
 
+            //Class Name textbox
+            this.textBox1.Enter += new EventHandler(textBox1_Enter);
+            this.textBox1.Leave += new EventHandler(textBox1_Leave);
+            textBox1_SetText();
+        }
+
+        protected void textBox1_SetText()
+        {
+            this.textBox1.Text = "Class Name";
+            textBox1.ForeColor = Color.Gray;
+        }
+
+        private void textBox1_Enter(object sender, EventArgs e)
+        {
+            if (textBox1.ForeColor == Color.Black)
+                return;
+            textBox1.Text = "";
+            textBox1.ForeColor = Color.Black;
+        }
+        private void textBox1_Leave(object sender, EventArgs e)
+        {
+            if (textBox1.Text.Trim() == "")
+                textBox1_SetText();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
