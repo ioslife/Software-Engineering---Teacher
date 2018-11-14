@@ -20,6 +20,7 @@ CREATE TABLE teacher (
 
 CREATE TABLE course (
 	id INT PRIMARY KEY AUTO_INCREMENT,
+	teacher_id INT,
 	crn int(7),
     startTime time,
     endTime time
