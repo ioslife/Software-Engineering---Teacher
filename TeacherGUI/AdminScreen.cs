@@ -93,6 +93,21 @@ namespace TeacherGUI
             textBox1.Leave += new EventHandler(textBox1_Leave);
             textBox1_SetText();
 
+            //First Name textbox
+            firstName.Enter += new EventHandler(firstName_Enter);
+            firstName.Leave += new EventHandler(firstName_Leave);
+            firstName_SetText();
+
+            //Last Name textbox
+            lastName.Enter += new EventHandler(lastName_Enter);
+            lastName.Leave += new EventHandler(lastName_Leave);
+            lastName_SetText();
+
+            //Password textbox
+            password.Enter += new EventHandler(password_Enter);
+            password.Leave += new EventHandler(password_Leave);
+            password_SetText();
+
             //populate class day dropdown
             var dataSource = new List<DayOfWeek>();
             dataSource.Add(new DayOfWeek() { Value = "1", Name = "Monday" });
@@ -132,6 +147,66 @@ namespace TeacherGUI
         {
             if (textBox1.Text.Trim() == "")
                 textBox1_SetText();
+        }
+
+        //teacher firstName
+        protected void firstName_SetText()
+        {
+            this.firstName.Text = "First Name";
+            firstName.ForeColor = Color.Gray;
+        }
+
+        private void firstName_Enter(object sender, EventArgs e)
+        {
+            if (firstName.ForeColor == Color.Black)
+                return;
+            firstName.Text = "";
+            firstName.ForeColor = Color.Black;
+        }
+        private void firstName_Leave(object sender, EventArgs e)
+        {
+            if (firstName.Text.Trim() == "")
+                firstName_SetText();
+        }
+
+        //teacher lastName
+        protected void lastName_SetText()
+        {
+            this.lastName.Text = "Last Name";
+            lastName.ForeColor = Color.Gray;
+        }
+
+        private void lastName_Enter(object sender, EventArgs e)
+        {
+            if (lastName.ForeColor == Color.Black)
+                return;
+            lastName.Text = "";
+            lastName.ForeColor = Color.Black;
+        }
+        private void lastName_Leave(object sender, EventArgs e)
+        {
+            if (lastName.Text.Trim() == "")
+                lastName_SetText();
+        }
+
+        //teacher password
+        protected void password_SetText()
+        {
+            this.password.Text = "Password";
+            password.ForeColor = Color.Gray;
+        }
+
+        private void password_Enter(object sender, EventArgs e)
+        {
+            if (password.ForeColor == Color.Black)
+                return;
+            password.Text = "";
+            password.ForeColor = Color.Black;
+        }
+        private void password_Leave(object sender, EventArgs e)
+        {
+            if (password.Text.Trim() == "")
+                password_SetText();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

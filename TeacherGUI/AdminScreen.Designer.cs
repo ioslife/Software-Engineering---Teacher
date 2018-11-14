@@ -51,14 +51,13 @@
             this.firstName.Name = "firstName";
             this.firstName.Size = new System.Drawing.Size(260, 20);
             this.firstName.TabIndex = 0;
-            this.firstName.Text = "First Name";
             // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(645, 59);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(264, 20);
-            this.textBox1.TabIndex = 1;
+            this.textBox1.TabIndex = 4;
             // 
             // label1
             // 
@@ -111,7 +110,7 @@
             this.comboBox1.Location = new System.Drawing.Point(645, 32);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(264, 21);
-            this.comboBox1.TabIndex = 10;
+            this.comboBox1.TabIndex = 3;
             this.comboBox1.Text = "Professor";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -128,16 +127,15 @@
             this.lastName.Location = new System.Drawing.Point(12, 85);
             this.lastName.Name = "lastName";
             this.lastName.Size = new System.Drawing.Size(260, 20);
-            this.lastName.TabIndex = 12;
-            this.lastName.Text = "Last Name";
+            this.lastName.TabIndex = 1;
             // 
             // password
             // 
             this.password.Location = new System.Drawing.Point(12, 111);
             this.password.Name = "password";
             this.password.Size = new System.Drawing.Size(260, 20);
-            this.password.TabIndex = 13;
-            this.password.Text = "Password";
+            this.password.TabIndex = 2;
+            this.password.UseSystemPasswordChar = true;
             // 
             // comboBox2
             // 
@@ -150,7 +148,7 @@
             this.comboBox2.Location = new System.Drawing.Point(645, 110);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(264, 21);
-            this.comboBox2.TabIndex = 14;
+            this.comboBox2.TabIndex = 6;
             this.comboBox2.Text = "Time";
             // 
             // comboBox3
@@ -165,7 +163,7 @@
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.comboBox3.Size = new System.Drawing.Size(264, 21);
-            this.comboBox3.TabIndex = 15;
+            this.comboBox3.TabIndex = 5;
             this.comboBox3.Text = "Day";
             // 
             // dataGridView2
