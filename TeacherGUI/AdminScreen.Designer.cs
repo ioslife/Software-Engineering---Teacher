@@ -32,7 +32,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.SubmitClass = new System.Windows.Forms.Button();
             this.SubmitProfessor = new System.Windows.Forms.Button();
@@ -40,7 +39,8 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,14 +76,6 @@
             this.textBox2.Size = new System.Drawing.Size(260, 20);
             this.textBox2.TabIndex = 3;
             this.textBox2.Text = "Email";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(12, 245);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(260, 20);
-            this.textBox3.TabIndex = 4;
-            this.textBox3.Text = "Class Time";
             // 
             // label2
             // 
@@ -154,20 +146,42 @@
             this.textBox5.TabIndex = 13;
             this.textBox5.Text = "Password";
             // 
-            // textBox6
+            // comboBox2
             // 
-            this.textBox6.Location = new System.Drawing.Point(12, 219);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(260, 20);
-            this.textBox6.TabIndex = 14;
-            this.textBox6.Text = "Class Day";
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "De",
+            "Allan",
+            "Zhang",
+            "Master Chief"});
+            this.comboBox2.Location = new System.Drawing.Point(12, 244);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(260, 21);
+            this.comboBox2.TabIndex = 14;
+            this.comboBox2.Text = "Time";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "De",
+            "Allan",
+            "Zhang",
+            "Master Chief"});
+            this.comboBox3.Location = new System.Drawing.Point(12, 219);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.comboBox3.Size = new System.Drawing.Size(260, 21);
+            this.comboBox3.TabIndex = 15;
+            this.comboBox3.Text = "Day";
             // 
             // AdminScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(901, 567);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.dataGridView1);
@@ -175,7 +189,6 @@
             this.Controls.Add(this.SubmitProfessor);
             this.Controls.Add(this.SubmitClass);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
@@ -195,7 +208,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button SubmitClass;
         private System.Windows.Forms.Button SubmitProfessor;
@@ -203,6 +215,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox3;
     }
 }

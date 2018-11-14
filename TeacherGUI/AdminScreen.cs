@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
@@ -58,13 +59,33 @@ namespace TeacherGUI
             comboBox1.ValueMember = "teacher_ID";
             comboBox1.DisplayMember = "Professor";
             comboBox1.DataSource = profDataTable;
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
 
             //Class Name textbox
-            this.textBox1.Enter += new EventHandler(textBox1_Enter);
-            this.textBox1.Leave += new EventHandler(textBox1_Leave);
+            textBox1.Enter += new EventHandler(textBox1_Enter);
+            textBox1.Leave += new EventHandler(textBox1_Leave);
             textBox1_SetText();
+
+            //populate class day dropdown
+            var dataSource = new List<DayOfWeek>();
+            dataSource.Add(new DayOfWeek() { Value = "1", Name = "Monday" });
+            dataSource.Add(new DayOfWeek() { Value = "2", Name = "Tuesday" });
+            dataSource.Add(new DayOfWeek() { Value = "3", Name = "Wednesday" });
+            dataSource.Add(new DayOfWeek() { Value = "4", Name = "Thursday" });
+            dataSource.Add(new DayOfWeek() { Value = "5", Name = "Friday" });
+            dataSource.Add(new DayOfWeek() { Value = "6", Name = "Saturday" });
+            dataSource.Add(new DayOfWeek() { Value = "7", Name = "Sunday" });
+
+            //Setup data binding
+            comboBox3.DataSource    = dataSource;
+            comboBox3.DisplayMember = "Name";
+            comboBox3.ValueMember   = "Value";
+
+            // make it readonly
+            comboBox3.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
+        //code from https://stackoverflow.com/questions/14544135/how-to-gray-out-default-text-in-textbox
         protected void textBox1_SetText()
         {
             this.textBox1.Text = "Class Name";
@@ -87,6 +108,12 @@ namespace TeacherGUI
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        public class DayOfWeek
+        {
+            public string Name { get; set; }
+            public string Value { get; set; }
         }
     }
 }
