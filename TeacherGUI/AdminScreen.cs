@@ -22,6 +22,7 @@ namespace TeacherGUI
             
         }
 
+        //on load connect to DB and populate admin table
         private void AdminScreen_Load(object sender, EventArgs e)
         {
             databaseController.dbConnect();
